@@ -1,5 +1,5 @@
-import logo from './search-logo.gif';
-import './App.css';
+import logo from '../search-logo.gif';
+import '../App.css';
 
 function LandingPage() {
   return (

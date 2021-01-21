@@ -1,9 +1,11 @@
+
 /* landing page */
 .App {
   text-align: center;
 }
 
 .App-logo {
+  background-color: #5D18EB;
   height: 40vmin;
   pointer-events: none;
   margin-left: 80px;
@@ -22,3 +24,11 @@
 }
 
 /* search */
+.input-group {
+  width: 50%;
+  margin: 3% 0 0 10%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
