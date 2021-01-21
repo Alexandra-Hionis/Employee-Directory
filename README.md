@@ -1,3 +1,8 @@
+# Employee-Directory
+
+https://create-react-app.dev/docs/getting-started/
+https://create-react-app.dev/docs/folder-structure/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
