@@ -1,25 +1,8 @@
-import logo from './search-logo.gif';
-import './App.css';
+import React from "react";
+import EmployeeContainer from "./components/EmployeeContainer";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Employee Directory
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <EmployeeContainer />;
 }
 
 export default App;
