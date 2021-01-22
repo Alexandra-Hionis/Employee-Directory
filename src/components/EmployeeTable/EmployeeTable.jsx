@@ -1,5 +1,5 @@
+import React from "react"
 
-import '../App.css';
 
 export default function EmployeeTable({data}) {
   // create column variable using guard clause bc we use object.keys passing in the first row of data which is going to pull out all of the keys from the json
@@ -11,7 +11,14 @@ export default function EmployeeTable({data}) {
       
   </thead>
   <tbody>
-    
+    {/* We iterate through our data to grab each row out of that data variable and to display a table row tag for each of the rows in our json data. Then iterate over each columns to have table definition tag to show us each of those values for a cell in a row. Call row and pass in column to get at that individul cell*/}
+    {data.map((row) => (
+      <tr>
+        {columns.map((column) => (
+        <td>{row[column]}</td>
+        ))}
+      </tr>
+    ))}
   </tbody>
 </table>
 }
