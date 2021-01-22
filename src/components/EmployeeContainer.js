@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import React from 'react'
-import Container from "./Container.js"
+// import Container from "./Container.js"
 import Row from "./Row.js"
 import Col from "./Col.js"
 import LandingPage from "./LandingPage"
@@ -50,7 +50,7 @@ class EmployeeContainer extends Component {
   
     render() {
       return (
-        <Container>
+        <div>
           <Row>
           <Col size="sm-12">
               <LandingPage>
@@ -67,16 +67,11 @@ class EmployeeContainer extends Component {
                 />
             </Col>
           </Row>
-        </Container>
-      );
-    }
-  }
-
-// Table
-
-
-<table class="table">
-  <thead class="thead-dark">
+          <Row>
+              <Col size="sm-12">
+              {/* // Table Just temporary */}
+              <table className="table">
+  <thead className="thead-dark">
     <tr>
       <th scope="col">#</th>
       <th scope="col">First</th>
@@ -105,5 +100,16 @@ class EmployeeContainer extends Component {
     </tr>
   </tbody>
 </table>
+              </Col>
+          </Row>
+        </div>
+      );
+    }
+  }
+
+
+
+
+
 
 export default EmployeeContainer;

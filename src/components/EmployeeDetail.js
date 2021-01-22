@@ -1,5 +1,5 @@
 import React from "react";
-
+import '../App.css';
 function EmployeeDetail(props) {
   return (
     <div className="text-center">

@@ -1,3 +1,4 @@
+/* employee container */
 
 /* landing page */
 .App {
@@ -44,4 +45,9 @@
 
 #reset-btn {
   margin-left: 2%;
+}
+
+/* Employee container table */
+.thead-dark {
+  background-color: #5D18EB;
 }
