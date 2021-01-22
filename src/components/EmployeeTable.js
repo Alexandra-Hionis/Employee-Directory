@@ -1,5 +1,6 @@
 import React from "react";
 import '../App.css';
+
 function EmployeeTable(props) {
   return (
   <table className="table">
