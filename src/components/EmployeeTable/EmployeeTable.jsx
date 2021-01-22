@@ -21,12 +21,13 @@ return (
   <tbody>
   
     <tr>
-      <th scope="row">{data.results.picture.medium}</th>
-      <td>{data.results.name.first}</td>
-      <td>{data.results.name.last}</td>
-      <td>{data.results.phone}</td>
-      <td>{data.results.email}</td>
-      <td>{data.results.nat}</td>
+     
+      <th scope="row">{data.results[0].picture.medium}</th>
+      <td>{data.results[0].name.first}</td>
+      <td>{data.results[0].name.last}</td>
+      <td>{data.results[0].phone}</td>
+      <td>{data.results[0].email}</td>
+      <td>{data.results[0].nat}</td>
     </tr>
     
       
