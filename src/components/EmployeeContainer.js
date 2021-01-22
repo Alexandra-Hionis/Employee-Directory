@@ -23,17 +23,18 @@ export default function EmployeeContainer() {
     
     useEffect (() => {
       
-        fetch("https://randomuser.me/api/?results=100&inc=picture,name,email,phone")
+        fetch("https://randomuser.me/api/?results=100&inc=picture,name,email,phone,nat")
         .then((response) => (response.json()))
         .then(function(data){
         // When response comes back from the server this is handeled by a chained call to a function called then which takes a funciton and in our case it returns the response that comes back from the server, calling json on it to the httpresponse data into json data.
         // .then(response => response.json())
         // returns this promise our app has access to json data we can call set data and pass in the json variable that was returned from previous promise which now gice out EmpolyeeComtainer component access to that json datat which is stored in our local state
         // .then((json) => setData(json));
-        console.log(data);
-    // }, [])
-    });
-  });
+        // setData(data.results)
+        console.log(data.results);
+            // }, [])
+          }, []);
+  }, []);
 
 
 return (
