@@ -30,8 +30,8 @@ export default function EmployeeContainer() {
         // .then(response => response.json())
         // returns this promise our app has access to json data we can call set data and pass in the json variable that was returned from previous promise which now gice out EmpolyeeComtainer component access to that json datat which is stored in our local state
         // .then((json) => setData(json));
-        // setData(data.results)
-        console.log(data.results);
+        setData(data.results)
+        // console.log(data.results);
             // }, [])
           }, []);
   }, []);
