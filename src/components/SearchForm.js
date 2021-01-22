@@ -3,25 +3,7 @@ import '../App.css';
 
 function SearchForm(props) {
   return (
-    // <div>
-    // <form>
-    //   <div className="form-group">
-    //     <input
-    //       onChange={props.handleInputChange}
-    //       value={props.value}
-    //       name="search"
-    //       type="text"
-    //       className="form-control"
-    //       placeholder="Search For an Employee"
-    //       id="search"
-    //     />
-    //     <button onClick={props.handleFormSubmit} className="btn btn-primary">
-    //       Search
-    //     </button>
-    //   </div>
-    // </form>
-    // </div>
-    <div>
+    <div className="form">
       <form>
     <div className="input-group">
     <input
@@ -33,7 +15,8 @@ function SearchForm(props) {
     aria-label="Search"
     name="search"
     aria-describedby="search-addon" />
-    <button type="button" class="btn btn-primary">Search</button>
+    <button type="button" className="btn btn-primary" id="button">Search</button>
+    <input type="reset" className="btn btn-primary" id="reset-btn" value="Reset"></input>
     </div>
     </form>
   

@@ -9,6 +9,7 @@
   height: 40vmin;
   pointer-events: none;
   margin-left: 80px;
+  margin-bottom: 5%;
 }
 
 .App-header {
@@ -24,11 +25,23 @@
 }
 
 /* search */
+.form {
+  margin-top: 2em;
+  width: 80%;
+  margin-left: 10%;
+}
 .input-group {
-  width: 50%;
-  margin: 3% 0 0 10%;
+  margin: 10px;
   position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
+}
+
+#button {
+  margin-left: 2%;
+}
+
+#reset-btn {
+  margin-left: 2%;
 }
