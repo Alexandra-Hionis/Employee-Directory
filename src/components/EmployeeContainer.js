@@ -1,11 +1,55 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
+require("es6-promise").polyfill();
+require("isomorphic-fetch");
 // import React from 'react'
 // import Container from "./Container.js"
-import Row from "./Row.js"
-import Col from "./Col.js"
-import LandingPage from "./LandingPage"
-import SearchForm from "./SearchForm.js"
-import API from "../utils/API"
+import Row from "./Row.js";
+import Col from "./Col.js";
+import LandingPage from "./LandingPage";
+import SearchForm from "./SearchForm.js";
+import EmployeeTable from "./EmployeeTable.js"
+// import API from "../utils/API"
+
+export default function EmployeeContainer() {
+    const [data, setData] = iseState([]);
+    const [q, setQ] = useState("");
+    
+    useEffect (() => {
+        fetch("https://randomuser.me/api/?results")
+        // When response comes back from the server this is handeled by a chained call to a function called then which takes a funciton and in our case it returns the response that comes back from the server, calling json on it to the httpresponse data into json data.
+        .then(response => response.json())
+        // returns this promise our app has access to json data we can call set data and pass in the json variable that was returned from previous promise which now gice out EmpolyeeComtainer component access to that json datat which is stored in our local state
+        .then((json) => setData(json));
+    }, [])
+
+
+return (
+    <div>
+           <Row>
+          <Col size="sm-12">
+              <LandingPage>
+
+               </LandingPage>
+             </Col>
+          </Row>
+          <Row>
+          <Col size="sm-12">
+                 <SearchForm
+                  value={this.state.search}
+                  handleInputChange={this.handleInputChange}
+                  handleFormSubmit={this.handleFormSubmit}
+                />
+            </Col>
+          </Row>
+          <Row>
+              <Col size="sm-12">
+                <EmployeeTable></EmployeeTable>
+              </Col>
+          </Row>
+        </div>
+      );
+}
+  
 
 // export default function EmployeeContainer() {
 //     return (
@@ -17,99 +61,106 @@ import API from "../utils/API"
 // }
 
 // Referenced week 19 act 20 for comparable file
-class EmployeeContainer extends Component {
-    state = {
-      result: {},
-      search: ""
-    };
+// class EmployeeContainer extends Component {
+//     state = {
+//       result: {},
+//       search: ""
+//     };
   
-    // When this component mounts, search for employees
-    componentDidMount() {
-      this.searchEmployees("employees");
-    }
+//     // When this component mounts, search for employees
+//     componentDidMount() {
+//       this.searchEmployees();
+//     }
   
-    searchEmployees = query => {
-      API.search(query)
-        .then(res => this.setState({ result: res.data }))
-        .catch(err => console.log(err));
-    };
+//     searchEmployees = query => {
+//       API.search(query)
+//         .then(res => this.setState({ result: res.data }))
+//         .catch(err => console.log(err));
+//     };
   
-    handleInputChange = event => {
-      const value = event.target.value;
-      const name = event.target.name;
-      this.setState({
-        [name]: value
-      });
-    };
+//     handleInputChange = event => {
+//       const value = event.target.value;
+//       const name = event.target.name;
+//       this.setState({
+//         [name]: value
+//       });
+//     };
   
-    // When the form is submitted, search the random user API for the value of `this.state.search`
-    handleFormSubmit = event => {
-      event.preventDefault();
-      this.searchEmployees(this.state.search);
-    };
+//     // When the form is submitted, search the random user API for the value of `this.state.search`
+//     handleFormSubmit = event => {
+//       event.preventDefault();
+//       this.searchEmployees(this.state.search);
+//     };
+
+
+
+
+
+
+
+
   
-    render() {
-      return (
-        <div>
-          <Row>
-          <Col size="sm-12">
-              <LandingPage>
+//     render() {
+//       return (
+//         <div>
+//           <Row>
+//           <Col size="sm-12">
+//               <LandingPage>
 
-              </LandingPage>
-            </Col>
-          </Row>
-          <Row>
-          <Col size="sm-12">
-                <SearchForm
-                  value={this.state.search}
-                  handleInputChange={this.handleInputChange}
-                  handleFormSubmit={this.handleFormSubmit}
-                />
-            </Col>
-          </Row>
-          <Row>
-              <Col size="sm-12">
-              {/* // Table Just temporary */}
-              <table className="table">
-  <thead className="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
-              </Col>
-          </Row>
-        </div>
-      );
-    }
-  }
-
-
+//               </LandingPage>
+//             </Col>
+//           </Row>
+//           <Row>
+//           <Col size="sm-12">
+//                 <SearchForm
+//                   value={this.state.search}
+//                   handleInputChange={this.handleInputChange}
+//                   handleFormSubmit={this.handleFormSubmit}
+//                 />
+//             </Col>
+//           </Row>
+//           <Row>
+//               <Col size="sm-12">
+//               {/* // Table Just temporary */}
+//               <table className="table">
+//   <thead className="thead-dark">
+//     <tr>
+//       <th scope="col">#</th>
+//       <th scope="col">First</th>
+//       <th scope="col">Last</th>
+//       <th scope="col">Handle</th>
+//     </tr>
+//   </thead>
+//   <tbody>
+//     <tr>
+//       <th scope="row">1</th>
+//       <td>Mark</td>
+//       <td>Otto</td>
+//       <td>@mdo</td>
+//     </tr>
+//     <tr>
+//       <th scope="row">2</th>
+//       <td>Jacob</td>
+//       <td>Thornton</td>
+//       <td>@fat</td>
+//     </tr>
+//     <tr>
+//       <th scope="row">3</th>
+//       <td>Larry</td>
+//       <td>the Bird</td>
+//       <td>@twitter</td>
+//     </tr>
+//   </tbody>
+// </table>
+//               </Col>
+//           </Row>
+//         </div>
+//       );
+//     }
+//   }
 
 
 
 
-export default EmployeeContainer;
+
+
