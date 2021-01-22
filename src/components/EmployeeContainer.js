@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-require("es6-promise").polyfill();
-require("isomorphic-fetch");
+
 // import React from 'react'
 // import Container from "./Container.js"
 import Row from "./Row.js";
@@ -9,17 +8,19 @@ import LandingPage from "./LandingPage";
 import SearchForm from "./SearchForm.js";
 import EmployeeTable from "./EmployeeTable.js"
 // import API from "../utils/API"
-
+require("es6-promise").polyfill();
+require("isomorphic-fetch");
 export default function EmployeeContainer() {
-    const [data, setData] = iseState([]);
+    const [data, setData] = useState([]);
     const [q, setQ] = useState("");
     
     useEffect (() => {
-        fetch("https://randomuser.me/api/?results")
+        fetch("https://randomuser.me/api/?results=100&inc=picture,name,email,phone")
         // When response comes back from the server this is handeled by a chained call to a function called then which takes a funciton and in our case it returns the response that comes back from the server, calling json on it to the httpresponse data into json data.
         .then(response => response.json())
         // returns this promise our app has access to json data we can call set data and pass in the json variable that was returned from previous promise which now gice out EmpolyeeComtainer component access to that json datat which is stored in our local state
         .then((json) => setData(json));
+        console.log("hi");
     }, [])
 
 
@@ -34,16 +35,18 @@ return (
           </Row>
           <Row>
           <Col size="sm-12">
-                 <SearchForm
-                  value={this.state.search}
+                 <SearchForm>
+                  {/* value={this.state.search}
                   handleInputChange={this.handleInputChange}
-                  handleFormSubmit={this.handleFormSubmit}
-                />
+                  handleFormSubmit={this.handleFormSubmit} */}
+                  </SearchForm>
             </Col>
           </Row>
           <Row>
               <Col size="sm-12">
-                <EmployeeTable></EmployeeTable>
+                <EmployeeTable data={data}>
+                  {/* table will take a single prop we call it data and were going to pass in the data variable that is store in our hook */}
+                </EmployeeTable>
               </Col>
           </Row>
         </div>
