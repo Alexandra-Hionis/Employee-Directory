@@ -6,7 +6,7 @@ import Row from "./Row.js";
 import Col from "./Col.js";
 import LandingPage from "./LandingPage";
 import SearchForm from "./SearchForm.js";
-import EmployeeTable from "./EmployeeTable.js"
+import EmployeeTable from "./EmployeeTable/EmployeeTable.jsx"
 // import API from "../utils/API"
 require("es6-promise").polyfill();
 require("isomorphic-fetch");
