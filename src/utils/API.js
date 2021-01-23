@@ -1,8 +1,8 @@
-import axios from "axios";
+// import axios from "axios";
 
-export default {
-    getData: () => axios.get("https://randomuser.me/api/?results=200")
-}
+// export default {
+//     getData: () => axios.get("https://randomuser.me/api/?results=200")
+// }
 
 // Random User API. When the user loads the page, a table of employees should render
 // const URL = "https://randomuser.me/api/?results=100&inc=picture,name,email,phone";
@@ -32,3 +32,14 @@ export default {
 //   }
 // }
 // export default axiosAPI;
+import axios from "axios";
+
+const URL = "https://randomuser.me/api/?results=200";
+
+const API =  {
+  getData: function () {
+    return axios.get(URL);
+  }
+}
+
+export default API;

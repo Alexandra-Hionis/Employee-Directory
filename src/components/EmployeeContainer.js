@@ -24,7 +24,6 @@ class App extends Component {
         filteredResults: users.data.results
       })
     })
-    console.log(API)
   }
 
   handleChange = e => {
