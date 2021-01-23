@@ -1,14 +1,30 @@
 import React from 'react'
 import '../App.css';
 
+//  Help from classmate Alison https://github.com/theoriginalison/employee-directory/blob/main/src/components/EmployeeContainer.js
 function EmployeeTable(props) {
+    sortName = () => {
+        let sortedNames = this.state.filteredResult.sort((a, b) => {
+          if (a.name.last < b.name.last) {
+            return -1;
+          }
+          if (a.name.last > b.name.last) {
+            return 1;
+          }
+          return 0;
+        },
+        );
+        this.setState({ filteredResult: sortedNames })
+      }
+
     return (
         <table className="table">
            <thead className="table-font">
            <tr>
            <th scope="col">Photo</th>
-           <th scope="col">First</th>
-           <th scope="col">Last</th>
+           <th><button onClick={this.sortByName}>Name</button></th>
+           {/* <th scope="col">First</th>
+           <th scope="col">Last</th> */}
            <th scope="col">Phone</th>
            <th scope="col">Email</th>
            <th scope="col">Nationality</th>
