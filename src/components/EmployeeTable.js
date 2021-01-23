@@ -17,14 +17,14 @@ function EmployeeTable(props) {
             <tbody className="table-font">
             {props.users? props.users.map((user, i) => 
                 <tr key={i}>
-                 <td><img id="employee-photo" src={user.picture.medium}/></td>   
+                 <td><img id="employee-photo" alt={user.name.first} src={user.picture.medium}/></td>   
                 <td>{user.name.first}</td>
                 <td>{user.name.last}</td>
                 <td>{user.phone}</td>
                 <td>{user.email}</td>
                 <td>{user.nat}</td>
                 </tr>
-                ): <p>No repo available!</p>}
+                ): <p>No Result!</p>}
             </tbody>
             </table>  
         

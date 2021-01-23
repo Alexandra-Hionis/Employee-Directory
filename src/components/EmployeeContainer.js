@@ -15,7 +15,7 @@ class App extends Component {
     searchTerm: ""
   }
 
-
+// filter results
   componentDidMount() {
     API.getData()
     .then(users => {
@@ -28,7 +28,7 @@ class App extends Component {
 
   handleChange = e => {
     const searchTerm = e.target.value;
-    const newFilteredUsers = this.state.allUsers.filter(user => user.name.first.indexOf(searchTerm)>=0 || user.name.last.indexOf(searchTerm)>=0 || user.email.indexOf(searchTerm)>=0 || user.phone.indexOf(searchTerm)>=0 || user.location.city.indexOf(searchTerm)>=0 || user.location.country.indexOf(searchTerm)>=0);
+    const newFilteredUsers = this.state.allUsers.filter(user => user.name.first.indexOf(searchTerm)>=0 || user.name.last.indexOf(searchTerm)>=0 || user.email.indexOf(searchTerm)>=0 || user.phone.indexOf(searchTerm)>=0 || user.location.nat.indexOf(searchTerm)>=0);
     this.setState({filteredResults: newFilteredUsers})
   }
 
