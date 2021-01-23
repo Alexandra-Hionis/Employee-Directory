@@ -13,8 +13,8 @@ React, JavaScript, and random user generator API
 ## Usage
 As a user, I want to be able to view my entire employee directory at once so that I have quick access to their information.
 As an employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name.
-![image 1]()
-![image 2]()
+![image 1](public/images/img-1.png)
+![image 2](public/images/img-2.png)
 ## License
 ISC
 ## Contributing
