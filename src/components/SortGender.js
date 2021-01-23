@@ -1,3 +1,8 @@
+// HELPFUL ARTICLES TO WORK ON SORTFIL AND FILTERING
+https://code.tutsplus.com/tutorials/introduction-to-api-calls-with-react-and-axios--cms-21027
+https://www.smashingmagazine.com/2020/03/sortable-tables-react/
+https://stackoverflow.com/questions/44535972/react-js-sort-by-ascending-and-descending
+
 export default class SortGender extends Component {
 
     //Setting this.state.data tot the data json array
