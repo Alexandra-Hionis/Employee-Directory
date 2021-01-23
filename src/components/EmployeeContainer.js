@@ -38,20 +38,6 @@ class App extends Component {
     this.setState({filteredResults: newFilteredUsers})
   }
 
-  // sortName = () => {
-  //   let sortedNames = this.state.filteredResult.sort((a, b) => {
-  //     if (a.name.last < b.name.last) {
-  //       return -1;
-  //     }
-  //     if (a.name.last > b.name.last) {
-  //       return 1;
-  //     }
-  //     return 0;
-  //   },
-  //   );
-  //   this.setState({ filteredResult: sortedNames })
-  // }
-
   render() {
     return (
       <>
