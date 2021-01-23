@@ -4,7 +4,7 @@ import '../App.css';
 function EmployeeTable(props) {
     return (
         <table className="table">
-           <thead className="thead-dark">
+           <thead className="table-font">
            <tr>
            <th scope="col">Photo</th>
            <th scope="col">First</th>
@@ -14,10 +14,10 @@ function EmployeeTable(props) {
            <th scope="col">Nationality</th>
          </tr>
        </thead>
-            <tbody>
+            <tbody className="table-font">
             {props.users? props.users.map((user, i) => 
                 <tr key={i}>
-                 <td>{user.picture.medium}</td>   
+                 <td><img id="employee-photo" src={user.picture.medium}/></td>   
                 <td>{user.name.first}</td>
                 <td>{user.name.last}</td>
                 <td>{user.phone}</td>
