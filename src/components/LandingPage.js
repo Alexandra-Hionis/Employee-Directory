@@ -1,5 +1,7 @@
 import logo from '../search-logo.gif';
+import React from 'react'
 import '../App.css';
+
 
 function LandingPage() {
   return (

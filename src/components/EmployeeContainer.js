@@ -1,68 +1,115 @@
-import React, { useState, useEffect } from "react";
-
-// import React from 'react'
-// import Container from "./Container.js"
-import Row from "./Row.js";
-import Col from "./Col.js";
-import LandingPage from "./LandingPage";
-import SearchForm from "./SearchForm.js";
-import EmployeeTable from "./EmployeeTable/EmployeeTable.jsx"
-// import API from "../utils/API"
-require("es6-promise").polyfill();
-require("isomorphic-fetch");
+import React, { Component } from 'react';
+import '../App.js';
+import '../App.css';
+import API from '../utils/API'
+import LandingPage from './LandingPage';
+import SearchForm from './SearchForm';
+import EmployeeTable from './EmployeeTable';
 
 
+class App extends Component {
 
-export default function EmployeeContainer() {
-
-
-
-  const [employees, setEmployees] = useState([]);
-  const [q, setQ] = useState("");
-
-  useEffect (() => {
-    fetch("https://randomuser.me/api/?results=100&inc=picture,name,email,phone,nat")
-    .then((response) => (response.json()))
-    .then(function(data){
-      setEmployees(data.results)
-      console.log(data.results)
-  }, []);
-    
-    
-    
-  
-          }, []);
-  
+  state = {
+    allUsers: [],
+    filteredResults: [],
+    searchTerm: ""
+  }
 
 
-return (
-    <div>
-           <Row>
-          <Col size="sm-12">
-              <LandingPage>
+  componentDidMount() {
+    API.getData()
+    .then(users => {
+      this.setState({
+        allUsers: users.data.results,
+        filteredResults: users.data.results
+      })
+    })
+  }
 
-               </LandingPage>
-             </Col>
-          </Row>
-          <Row>
-          <Col size="sm-12">
-                 <SearchForm>
-                  {/* value={this.state.search}
-                  handleInputChange={this.handleInputChange}
-                  handleFormSubmit={this.handleFormSubmit} */}
-                  </SearchForm>
-            </Col>
-          </Row>
-          <Row>
-              <Col size="sm-12">
-                <EmployeeTable>
-                  {/* table will take a single prop we call it data and were going to pass in the data variable that is store in our hook */}
-                </EmployeeTable>
-              </Col>
-          </Row>
-        </div>
-      );
+  handleChange = e => {
+    const searchTerm = e.target.value;
+    const newFilteredUsers = this.state.allUsers.filter(user => user.name.first.indexOf(searchTerm)>=0 || user.name.last.indexOf(searchTerm)>=0 || user.email.indexOf(searchTerm)>=0 || user.phone.indexOf(searchTerm)>=0 || user.location.city.indexOf(searchTerm)>=0 || user.location.country.indexOf(searchTerm)>=0);
+    this.setState({filteredResults: newFilteredUsers})
+  }
+
+  handleFormSubmit = e => {
+    const searchTerm = e.target.value;
+    const newFilteredUsers = this.state.allUsers.filter(user => user.name.first.indexOf(searchTerm)>=0);
+    this.setState({filteredResults: newFilteredUsers})
+  }
+
+  render() {
+    return (
+      <>
+      <LandingPage />
+      <SearchForm 
+      handleChange={this.handleChange}
+      searchTerm={this.state.searchTerm}
+      handleFormSubmit={this.handleFormSubmit}
+      />
+      <EmployeeTable users={this.state.filteredResults}/>
+      </>
+    );
+  }
+
 }
+
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// My other attemps. Ended up referencing a similar project
 
 // export default function EmployeeContainer() {
 //     return (
