@@ -26,15 +26,9 @@ class App extends Component {
     })
   }
 
-  // handleChange = e => {
-  //   const searchTerm = e.target.value;
-  //   const newFilteredUsers = this.state.allUsers.filter(user => user.name.first.indexOf(searchTerm)>=0 || user.name.last.indexOf(searchTerm)>=0 || user.email.indexOf(searchTerm)>=0 || user.phone.indexOf(searchTerm)>=0 || user.location.nat.indexOf(searchTerm)>=0);
-  //   this.setState({filteredResults: newFilteredUsers})
-  // }
-
   handleChange = e => {
     const searchTerm = e.target.value;
-    const newFilteredUsers = this.state.allUsers.filter(user => user.name.first.indexOf(searchTerm)>=0 || user.name.last.indexOf(searchTerm)>=0 || user.phone.indexOf(searchTerm)>=0 || user.email.indexOf(searchTerm)>=0 || user.nat.indexOf(searchTerm)>=0);
+    const newFilteredUsers = this.state.allUsers.filter(user => user.name.first.indexOf(searchTerm)>=0 || user.name.last.indexOf(searchTerm)>=0 || user.phone.indexOf(searchTerm)>=0 || user.email.indexOf(searchTerm)>=0 || user.login.username.indexOf(searchTerm)>=0);
     this.setState({filteredResults: newFilteredUsers})
   }
 
@@ -44,17 +38,7 @@ class App extends Component {
     this.setState({filteredResults: newFilteredUsers})
   }
 
-// Helpful link https://dev.to/vadims4/passing-down-functions-in-react-4618
-
-  // What you can do is create a function in EmployeeContainer that you pass down to the child
-  //   handleClick = () => {
-  //   console.log('I have been clicked')
-  //   this.setState({
-  //     isClicked: true
-  //   }, () => console.log(this.state.isClicked))
-
-  // }
-
+  toggleSortByEmail
 
   render() {
     return (
