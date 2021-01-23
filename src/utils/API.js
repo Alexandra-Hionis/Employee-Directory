@@ -32,14 +32,20 @@
 //   }
 // }
 // export default axiosAPI;
-import axios from "axios";
+// import axios from "axios";
 
-const URL = "https://randomuser.me/api/?results=200";
+// const URL = "https://randomuser.me/api/?results=200";
 
-const API =  {
-  getData: function () {
-    return axios.get(URL);
-  }
+// const API =  {
+//   getData: function () {
+//     return axios.get(URL);
+//   }
+// }
+
+// export default API;
+
+import axios from 'axios';
+
+export default {
+    getData: () => axios.get("https://randomuser.me/api/?results=200")
 }
-
-export default API;

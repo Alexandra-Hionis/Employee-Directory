@@ -7,8 +7,8 @@ function SearchForm(props) {
           <form>
         <div className="input-group">
         <input
-        onChange={props.handleInputChange}
-        value={props.search} 
+        onChange={props.handleChange}
+        value={props.search}
         type="text" 
         className="form-control rounded" 
         placeholder="Search for an Employee" 
@@ -22,7 +22,7 @@ function SearchForm(props) {
         </form>
       
       </div>
-      );
+      )
 }
 export default SearchForm;
 
