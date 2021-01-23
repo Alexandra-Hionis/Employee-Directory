@@ -22,12 +22,12 @@ return (
   
     <tr>
      
-      <th scope="row">{data.results[0].picture.medium}</th>
-      <td>{data.results[0].name.first}</td>
+    <td scope="row">{data.picture.medium}</td>
+      {/* <td>{data.results[0].name.first}</td>
       <td>{data.results[0].name.last}</td>
       <td>{data.results[0].phone}</td>
       <td>{data.results[0].email}</td>
-      <td>{data.results[0].nat}</td>
+      <td>{data.results[0].nat}</td> */}
     </tr>
     
       

@@ -17,25 +17,22 @@ export default function EmployeeContainer() {
 
 
 
-    const [data, setData] = useState([]);
-    
-    const [q, setQ] = useState("");
-    
-    useEffect (() => {
-      
-        fetch("https://randomuser.me/api/?results=100&inc=picture,name,email,phone,nat")
-        // convert response to json
-        .then((response) => (response.json()))
-        .then(function(data){
-        // When response comes back from the server this is handeled by a chained call to a function called then which takes a funciton and in our case it returns the response that comes back from the server, calling json on it to the httpresponse data into json data.
-        // .then(response => response.json())
-        // returns this promise our app has access to json data we can call set data and pass in the json variable that was returned from previous promise which now gice out EmpolyeeComtainer component access to that json datat which is stored in our local state
-        // .then((json) => setData(json));
-        setData(data.results)
-        console.log(data.results);
-            // }, [])
-          }, []);
+  const [employees, setEmployees] = useState([]);
+  const [q, setQ] = useState("");
+
+  useEffect (() => {
+    fetch("https://randomuser.me/api/?results=100&inc=picture,name,email,phone,nat")
+    .then((response) => (response.json()))
+    .then(function(data){
+      setEmployees(data.results)
+      console.log(data.results)
   }, []);
+    
+    
+    
+  
+          }, []);
+  
 
 
 return (
@@ -58,7 +55,7 @@ return (
           </Row>
           <Row>
               <Col size="sm-12">
-                <EmployeeTable data={data}>
+                <EmployeeTable>
                   {/* table will take a single prop we call it data and were going to pass in the data variable that is store in our hook */}
                 </EmployeeTable>
               </Col>
@@ -174,3 +171,7 @@ return (
 //       );
 //     }
 //   }
+
+// That way when we do
+// employeeState[i]
+// and try the loop won’t even start, because employeeState.length === 0
