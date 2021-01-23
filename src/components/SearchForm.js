@@ -1,7 +1,7 @@
 import React from 'react'
 import '../App.css';
 
-function Search(props) {
+function SearchForm(props) {
     return (
         <div className="form">
           <form>
@@ -24,5 +24,5 @@ function Search(props) {
       </div>
       );
 }
-export default Search;
+export default SearchForm;
 

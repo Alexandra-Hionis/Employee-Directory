@@ -44,16 +44,26 @@ export default class SortGender extends Component {
         }
 
     }
-return (
-    <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <div class="input-group-text">
-        <input type="checkbox" aria-label="Checkbox for following text input">
-      </div>
-    </div>
-    <input type="text" class="form-control" aria-label="Text input with checkbox">
-  </div>
-)
+    render() {
+        return (
+          
+            <ul>
+            <li>
+                <input type='radio' value='1' name='radio' id='radio1'/>
+                <label for='radio1'>Female</label>
+            </li>
+            <li>
+                <input type='radio' value='2' name='radio'  id='radio2'/>
+                <label for='radio2'>Male</label>
+            </li>
+            <li>
+                <input type='radio' value='3' name='radio'  id='radio3'/>
+                <label for='radio3'>Other</label>
+            </li>
+        </ul>
+        )
 }
+    
 
+}
 
