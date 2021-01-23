@@ -38,6 +38,16 @@ class App extends Component {
     this.setState({filteredResults: newFilteredUsers})
   }
 
+  // What you can do is create a function in EmployeeContainer that you pass down to the child
+  //   handleClick = () => {
+  //   console.log('I have been clicked')
+  //   this.setState({
+  //     isClicked: true
+  //   }, () => console.log(this.state.isClicked))
+
+  // }
+
+
   render() {
     return (
       <>
