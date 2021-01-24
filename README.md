@@ -1,7 +1,7 @@
 # Employee-Directory
 Deployed Link: https://alexandra-hionis.github.io/Employee-Directory/
 ## Description
-Employee Directory is a simple React application that lists a photo, name, phone, email, and nationality of 200 employees and allows users to filter employees' info. Employee information is fetched through a random user API.
+Employee Directory is a simple React application that lists a photo, name, phone, email, and nationality of 200 employees and allows users to filter employees' info. When the user types in "mi" in the search box, first name and last name results that start with "mi" will begin to filter. Employee information is fetched through a random user API.
 ## Table of Contents
 - [Description](#description)
 - [Technologies](#technologies)
@@ -13,12 +13,13 @@ Employee Directory is a simple React application that lists a photo, name, phone
 ## Technologies
 React, JavaScript, and random user generator API
 ## Future
-Getting sort by gender, or even acending or decending order working so it's fully functional.
+Getting sort by email in ascending and descending order.
 ## Usage
 As a user, I want to be able to view my entire employee directory at once so that I have quick access to their information.
 As an employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name.
-![image 1](public/images/img-1.png)
-![image 2](public/images/img-2.png)
+<!-- ![image 1](public/images/img-1.png)
+![image 2](public/images/img-2.png) -->
+![video](https://media.giphy.com/media/iq02UTd9ZPCh3P0yGt/giphy.gif)
 ## License
 ISC
 ## Contributing
