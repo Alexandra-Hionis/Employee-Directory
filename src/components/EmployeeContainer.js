@@ -26,6 +26,8 @@ class App extends Component {
     })
   }
 
+  //  e. target. value is the value property of some DOM element, in this case that means the text entered in the search input.
+
   handleChange = e => {
     const searchTerm = e.target.value;
     const newFilteredUsers = this.state.allUsers.filter(user => user.name.first.indexOf(searchTerm)>=0 || user.name.last.indexOf(searchTerm)>=0 || user.phone.indexOf(searchTerm)>=0 || user.email.indexOf(searchTerm)>=0 || user.login.username.indexOf(searchTerm)>=0);
@@ -38,9 +40,10 @@ class App extends Component {
     this.setState({filteredResults: newFilteredUsers})
   }
 
-  toggleSortByEmail
+  
 
   render() {
+    
     return (
       <>
       <LandingPage />
